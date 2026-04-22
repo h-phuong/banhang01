@@ -1,0 +1,272 @@
+.procard-grid {
+  position: relative;
+  background: #fff7f8;
+  border: 1px solid #a9141e46;
+  border-radius: 16px;
+  overflow: visible;
+  transition:
+    border-color 0.18s ease,
+    transform 0.18s ease;
+  display: flex;
+  flex-direction: column;
+}
+
+.procard-grid:hover {
+  border-color: #a9141ec5;
+}
+
+.procard-grid.out:hover {
+  transform: none;
+}
+
+/* IMAGE */
+.procard-img {
+  position: relative;
+  aspect-ratio: 1 / 1;
+  padding: 8px;
+  background: #fff6f7;
+  transform-origin: center center;
+  border-radius: 16px 16px 0 0;
+}
+
+/* shine sweep */
+.procard-img::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    120deg,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 0.12) 50%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  transform: translateX(-120%) rotate(6deg);
+  transition: transform 0.8s ease;
+  pointer-events: none;
+}
+
+.procard-grid:hover .procard-img::before {
+  transform: translateX(120%) rotate(6deg);
+}
+
+.procard-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 10px;
+  border: 1px solid rgba(169, 20, 30, 0.06);
+  transition:
+    transform 0.18s ease,
+    filter 0.18s ease;
+}
+
+.procard-grid.out .procard-img img {
+  filter: brightness(0.82);
+}
+
+.procard-grid:hover .procard-img img {
+  transform: scale(1.006);
+  filter: none;
+}
+
+/* BADGES */
+.procard-badges {
+  position: absolute;
+  top: 6px;
+  left: -2px;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  align-items: flex-start;
+}
+
+.badge {
+  padding: 6px 10px;
+  font-size: 12px;
+  font-weight: 800;
+  border-radius: 4px;
+  color: #fff;
+}
+
+.badge.sale {
+  background: #a9141e;
+}
+
+.badge.new {
+  background: #de5b87;
+}
+
+/* OUT OF STOCK OVERLAY */
+.procard-out-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 3;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+}
+
+.procard-out-badge {
+  min-width: 120px;
+  height: 120px;
+  padding: 0 18px;
+  border-radius: 999px;
+  background: rgba(169, 20, 30, 0.72);
+  color: #ffffff;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  font-size: 15px;
+  font-weight: 800;
+  letter-spacing: 0.8px;
+  backdrop-filter: blur(2px);
+}
+
+/* BODY */
+.procard-body {
+  margin-top: 12px;
+  padding: 12px;
+  display: flex;
+  flex-direction: column;
+}
+
+.procard-title {
+  font-size: 16px;
+  font-weight: bold;
+  line-height: 1.3;
+  min-height: 42px;
+  overflow: hidden;
+  margin-bottom: 4px;
+  color: #a9141e;
+}
+
+.procard-desc {
+  font-size: 12px;
+  color: rgba(70, 40, 47, 0.78);
+  height: 34px;
+  overflow: hidden;
+}
+
+/* FOOTER */
+.procard-end {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 10px;
+  margin-top: 8px;
+}
+
+.procard-priceWrap {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 2px;
+}
+
+.procard-oldPrice {
+  font-size: 12px;
+  color: #b18d98;
+  text-decoration: line-through;
+  line-height: 1.2;
+}
+
+.procard-price {
+  color: #a9141e;
+  font-weight: 800;
+  font-size: 15px;
+  line-height: 1.2;
+}
+
+.btn-add-cart {
+  border: 1px solid rgba(169, 20, 30, 0.1);
+  background: #a9141e;
+  color: #ffffff;
+  padding: 10px 12px;
+  font-size: 14px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition:
+    background 0.18s ease,
+    color 0.18s ease,
+    border-color 0.18s ease;
+  white-space: nowrap;
+}
+
+.btn-add-cart:hover {
+  background: #de5b66;
+  color: #ffffff;
+}
+
+.btn-add-cart.out,
+.btn-add-cart:disabled {
+  background: #f3e6e9;
+  color: #9b7a82;
+  border-color: #e9cdd4;
+  cursor: not-allowed;
+}
+
+.btn-add-cart.out:hover,
+.btn-add-cart:disabled:hover {
+  background: #f3e6e9;
+  color: #9b7a82;
+}
+
+/* bỏ reflection/shadow nặng */
+.procard-grid::after {
+  display: none;
+}
+
+/* Disable heavy hover/3D effects on touch devices */
+@media (hover: none) and (pointer: coarse) {
+  .procard-grid {
+    transform: none !important;
+    box-shadow: none !important;
+  }
+
+  .procard-grid::after {
+    display: none !important;
+  }
+
+  .procard-img::before {
+    display: none !important;
+  }
+
+  .procard-grid .procard-img img {
+    transform: none !important;
+  }
+
+  .procard-grid {
+    margin-bottom: 14px;
+  }
+
+  .btn-add-cart {
+    width: 100%;
+    display: block;
+  }
+}
+
+/* Ensure product images scale correctly on narrow phones */
+@media (max-width: 420px) {
+  .procard-img {
+    padding: 6px;
+  }
+
+  .procard-img img {
+    border-radius: 8px;
+  }
+
+  .procard-title {
+    font-size: 15px;
+  }
+
+  .procard-desc {
+    font-size: 13px;
+  }
+
+  .procard-price {
+    font-size: 16px;
+  }
+}

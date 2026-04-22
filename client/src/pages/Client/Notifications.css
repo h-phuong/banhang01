@@ -1,0 +1,340 @@
+body {
+  background: #fffbfb;
+}
+/* ================= CONTAINER ================= */
+
+.noti-container {
+  max-width: 850px;
+  margin: 40px auto;
+  background: #ffffffe8;
+  border: 1px solid rgba(169, 20, 30, 0.1);
+  border-radius: 16px;
+  box-shadow: 0 8px 28px rgba(169, 20, 30, 0.08);
+  overflow: hidden;
+  font-family: "Roboto", sans-serif;
+}
+
+/* ================= HEADER ================= */
+
+.noti-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 24px;
+  border-bottom: 1px solid rgba(169, 20, 30, 0.08);
+  background: #ffffffe8;
+}
+
+.noti-header h2 {
+  font-size: 22px;
+  font-weight: 800;
+  color: #a9141e;
+  margin: 0;
+  line-height: 1.3;
+}
+
+.btn-text {
+  background: none;
+  border: none;
+  color: #de5b87;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 600;
+  transition: 0.2s ease;
+  font-family: "Roboto", sans-serif;
+}
+
+.btn-text:hover {
+  opacity: 0.85;
+}
+
+/* ================= LIST ================= */
+
+.noti-list {
+  display: flex;
+  flex-direction: column;
+  max-height: 360px;
+  overflow-y: auto;
+  background: #ffffffe8;
+}
+
+.noti-list::-webkit-scrollbar {
+  width: 8px;
+}
+
+.noti-list::-webkit-scrollbar-thumb {
+  background: rgba(169, 20, 30, 0.12);
+  border-radius: 999px;
+}
+
+/* ================= ITEM ================= */
+
+.noti-item {
+  display: flex;
+  align-items: center;
+  padding: 18px 22px;
+  border-bottom: 1px solid rgba(169, 20, 30, 0.06);
+  cursor: pointer;
+  position: relative;
+  transition:
+    background 0.2s ease,
+    transform 0.1s ease;
+}
+
+.noti-item:last-child {
+  border-bottom: none;
+}
+
+.noti-item:hover {
+  background: #fff7f8;
+}
+
+.noti-item:active {
+  transform: scale(0.995);
+}
+
+.noti-item.unread {
+  background: #fff1f2;
+}
+
+/* ================= ICON ================= */
+
+.noti-icon {
+  margin-right: 16px;
+  font-size: 18px;
+  background: #fff1f2;
+  color: #a9141e;
+  border-radius: 50%;
+  width: 44px;
+  height: 44px;
+  min-width: 44px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  flex-shrink: 0;
+}
+
+/* ================= CONTENT ================= */
+
+.noti-content {
+  flex: 1;
+  min-width: 0;
+}
+
+.noti-content h4 {
+  margin: 0 0 6px 0;
+  font-size: 15px;
+  font-weight: 700;
+  color: #432e35;
+  line-height: 1.45;
+}
+
+.noti-content p {
+  margin: 0;
+  color: #6b585e;
+  font-size: 14px;
+  line-height: 1.5;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 480px;
+}
+
+.noti-time {
+  font-size: 12px;
+  color: #b79ba4;
+  display: block;
+  margin-top: 6px;
+  line-height: 1.4;
+}
+
+/* ================= UNREAD DOT ================= */
+
+.unread-dot {
+  width: 8px;
+  height: 8px;
+  background-color: #de5b87;
+  border-radius: 50%;
+  margin-right: 12px;
+  flex-shrink: 0;
+}
+
+/* ================= DELETE BUTTON ================= */
+
+.btn-delete {
+  background: none;
+  border: none;
+  color: #c7aab1;
+  cursor: pointer;
+  padding: 8px;
+  transition: 0.2s ease;
+  border-radius: 8px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.btn-delete:hover {
+  color: #a9141e;
+  background: #fff1f2;
+}
+
+/* ================= EMPTY STATE ================= */
+
+.noti-empty {
+  text-align: center;
+  padding: 100px 20px;
+  color: #6b585e;
+  background: #ffffffe8;
+  font-family: "Roboto", sans-serif;
+}
+
+.back-link {
+  color: #a9141e;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.back-link:hover {
+  text-decoration: underline;
+}
+
+/* ================= MODAL ================= */
+
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(67, 46, 53, 0.45);
+  display: flex;
+  justify-content: center;
+  align-items: center; /* căn giữa dọc */
+  z-index: 1000;
+  padding: 20px;
+}
+
+.modal-content {
+  background: #ffffffe8;
+  width: 100%;
+  max-width: 520px;
+  border-radius: 16px;
+  overflow: hidden;
+  animation: fadeIn 0.25s ease-in-out;
+  box-shadow: 0 12px 40px rgba(169, 20, 30, 0.14);
+  border: 1px solid rgba(169, 20, 30, 0.08);
+  font-family: "Roboto", sans-serif;
+  margin: 0 auto; /* căn giữa ngang */
+}
+
+.modal-header {
+  padding: 16px 20px;
+  border-bottom: 1px solid rgba(169, 20, 30, 0.08);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #fff1f2;
+}
+
+.modal-header h2,
+.modal-header h3,
+.modal-header h4 {
+  margin: 0;
+  font-size: 17px;
+  font-weight: 800;
+  line-height: 1.35;
+  color: #a9141e;
+}
+
+.modal-body {
+  padding: 24px 20px;
+  line-height: 1.7;
+  font-size: 14px;
+  background: #ffffffe8;
+  color: #432e35;
+  text-align: left;
+}
+
+.modal-title {
+  color: #e85b2f;
+  margin: 0 0 10px;
+  font-size: 22px;
+  font-weight: 800;
+  line-height: 1.45;
+}
+
+.modal-body p {
+  margin: 0 0 10px;
+  color: #6b585e;
+  font-size: 14px;
+  line-height: 1.65;
+}
+
+.modal-time {
+  display: block;
+  font-size: 12px;
+  color: #b79ba4;
+  margin-top: 12px;
+  line-height: 1.4;
+}
+
+.modal-footer {
+  padding: 14px 20px;
+  border-top: 1px solid rgba(169, 20, 30, 0.08);
+  text-align: right;
+  background: #ffffffe8;
+}
+
+/* ================= BUTTONS ================= */
+
+.btn-close {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  width: 34px;
+  height: 34px;
+  min-width: 34px;
+  border-radius: 8px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: #b79ba4;
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 1;
+  padding: 0;
+  appearance: none;
+  -webkit-appearance: none;
+}
+
+.btn-close:hover {
+  background: #ffe7ec;
+  color: #a9141e;
+}
+
+.btn-confirm {
+  background-color: #e85b2f;
+  color: #fff;
+  border: none;
+  padding: 10px 22px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 700;
+  font-family: "Roboto", sans-serif;
+  transition: 0.2s ease;
+}
+
+.btn-confirm:hover {
+  background-color: #d94d24;
+}
+/* ================= ANIMATION ================= */
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

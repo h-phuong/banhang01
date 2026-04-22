@@ -1,0 +1,897 @@
+/* ===========================
+   ProductsPage.css
+   Đồng bộ theme xanh admin + Roboto
+   Dùng cho class ap-*
+   =========================== */
+
+.ap-page {
+  font-family: "Roboto", sans-serif;
+  animation: apFadeIn 0.25s ease-in-out;
+}
+
+@keyframes apFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ---------- Header ---------- */
+.ap-head {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+  margin-top: 18px;
+  margin-bottom: 12px;
+  flex-wrap: wrap;
+}
+
+.ap-title {
+  margin: 0;
+  font-size: 24px;
+  font-weight: 800;
+  color: #35799d;
+}
+
+.ap-subtitle {
+  margin: 6px 0 0;
+  font-size: 13px;
+  line-height: 1.5;
+  color: #6d8796;
+}
+
+.ap-actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+/* ---------- Buttons ---------- */
+.ap-btn {
+  font-family: "Roboto", sans-serif;
+  min-height: 38px;
+  padding: 0 14px;
+  border-radius: 10px;
+  border: 1px solid transparent;
+  cursor: pointer;
+  font-weight: 700;
+  font-size: 13px;
+  transition: all 0.18s ease;
+  user-select: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
+}
+
+.ap-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.ap-btnPrimary {
+  background: #4f97bb;
+  border-color: #4f97bb;
+  color: #fff;
+  box-shadow: 0 10px 24px rgba(79, 151, 187, 0.18);
+}
+
+.ap-btnPrimary:hover {
+  background: #35799d;
+  border-color: #35799d;
+  transform: translateY(-1px);
+}
+
+.ap-btnGhost {
+  background: #fff;
+  border-color: #bdd4e0;
+  color: #35799d;
+}
+
+.ap-btnGhost:hover {
+  background: #e2eef5;
+  border-color: #4f97bb;
+  color: #244656;
+}
+
+/* action buttons in table */
+.ap-actionGroup {
+  display: inline-flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.ap-btnInventory {
+  min-width: 64px;
+  background: #e2eef5;
+  border-color: #bdd4e0;
+  color: #35799d;
+}
+
+.ap-btnInventory:hover {
+  background: #d5e7f0;
+  border-color: #4f97bb;
+  color: #244656;
+}
+
+.ap-btnEdit {
+  min-width: 64px;
+  background: #4f97bb;
+  border-color: #4f97bb;
+  color: #ffffff;
+  box-shadow: 0 8px 18px rgba(79, 151, 187, 0.16);
+}
+
+.ap-btnEdit:hover {
+  background: #35799d;
+  border-color: #35799d;
+  color: #ffffff;
+  transform: translateY(-1px);
+}
+
+.ap-btnStorage {
+  min-width: 104px;
+  height: 36px;
+  padding: 0 10px;
+  border-radius: 10px;
+  white-space: nowrap;
+  font-family: "Roboto", sans-serif;
+  font-weight: 700;
+  font-size: 12px;
+}
+
+/* ---------- Toolbar ---------- */
+.ap-toolbar {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr auto;
+  gap: 14px;
+  align-items: end;
+  background: #fff;
+  border: 1px solid #bdd4e0;
+  border-radius: 16px;
+  padding: 16px;
+  margin: 24px 0;
+  box-shadow: 0 6px 18px rgba(79, 151, 187, 0.08);
+}
+
+/* ---------- Form grid ---------- */
+.ap-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px 16px;
+  align-items: start;
+}
+
+.ap-field {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  min-width: 0;
+}
+
+.ap-fieldHalf {
+  grid-column: span 1;
+}
+
+.ap-fieldFull {
+  grid-column: 1 / -1;
+}
+
+.ap-fieldRight {
+  margin-left: auto;
+  min-width: auto;
+  align-items: flex-end;
+}
+
+.ap-label {
+  font-size: 14px;
+  font-weight: 700;
+  color: #244656;
+  line-height: 1.4;
+}
+
+.ap-input {
+  font-family: "Roboto", sans-serif;
+  height: 42px;
+  padding: 0 12px;
+  border-radius: 12px;
+  border: 1px solid #bdd4e0;
+  outline: none;
+  background: #fff;
+  color: #244656;
+  font-size: 13px;
+  width: 100%;
+  box-sizing: border-box;
+  transition: all 0.2s ease;
+}
+
+.ap-input:focus {
+  border-color: #4f97bb;
+  box-shadow: 0 0 0 0.2rem rgba(79, 151, 187, 0.14);
+}
+
+.ap-input::placeholder {
+  color: #90a5b1;
+}
+
+/* ---------- Alert ---------- */
+.ap-alert {
+  background: rgba(207, 42, 42, 0.08);
+  border: 1px solid rgba(207, 42, 42, 0.18);
+  color: #b52b2b;
+  padding: 12px 14px;
+  border-radius: 12px;
+  font-size: 13px;
+  margin-bottom: 14px;
+}
+
+/* ---------- Card + Table ---------- */
+.ap-card {
+  background: #fff;
+  border-radius: 16px;
+  border: 1px solid #bdd4e0;
+  overflow: hidden;
+  box-shadow: 0 6px 18px rgba(79, 151, 187, 0.08);
+}
+
+.ap-tableWrap {
+  width: 100%;
+  overflow: auto;
+}
+
+.ap-table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 900px;
+}
+
+.ap-table thead th {
+  background: #e2edf4;
+  color: #5f7d8d;
+  font-size: 12px;
+  font-weight: 800;
+  text-transform: none;
+  border-bottom: 1px solid #d7e5ec;
+  padding: 13px 12px;
+  white-space: nowrap;
+}
+
+.ap-table td {
+  padding: 12px;
+  border-bottom: 1px solid #edf3f6;
+  font-size: 13px;
+  color: #244656;
+  vertical-align: middle;
+  word-break: break-word;
+}
+
+.ap-table tbody tr:hover td {
+  background: rgba(79, 151, 187, 0.05);
+}
+
+/* helpers */
+.ap-right {
+  text-align: right !important;
+}
+
+.ap-center {
+  text-align: center !important;
+}
+
+.ap-muted {
+  color: #7a95a4 !important;
+}
+
+.ap-strong {
+  font-weight: 800;
+  color: #244656;
+}
+
+.ap-mono {
+  font-family: "Roboto", sans-serif;
+  font-size: 12px;
+  letter-spacing: 0.4px;
+}
+
+/* ---------- Badge ---------- */
+.ap-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 26px;
+  padding: 0 10px;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 800;
+  border: 1px solid transparent;
+  font-family: "Roboto", sans-serif;
+  line-height: 1;
+}
+
+/* Hoạt động */
+.ap-badgeSuccess {
+  background: rgba(12, 107, 55, 0.1);
+  color: #0c6b37;
+  border-color: rgba(12, 107, 55, 0.22);
+}
+
+/* Mới + Nổi bật */
+.ap-badgeInfo {
+  background: rgba(30, 69, 159, 0.1);
+  color: #1e459f;
+  border-color: rgba(30, 69, 159, 0.22);
+}
+
+/* Khóa */
+.ap-badgeMuted {
+  background: rgba(207, 42, 42, 0.1);
+  color: #cf2a2a;
+  border-color: rgba(207, 42, 42, 0.2);
+}
+
+/* Bán chạy */
+.ap-badgeWarning {
+  background: rgba(250, 189, 50, 0.16);
+  color: #9b6a00;
+  border-color: rgba(250, 189, 50, 0.3);
+}
+
+/* Giảm giá */
+.ap-badgeDanger {
+  background: rgba(207, 42, 42, 0.08);
+  color: #cf2a2a;
+  border-color: rgba(207, 42, 42, 0.18);
+}
+
+/* ---------- Pagination ---------- */
+.ap-pagination {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 14px 16px;
+}
+
+/* ---------- Modal ---------- */
+.ap-modalBackdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(36, 70, 86, 0.32);
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+}
+
+.ap-modal {
+  width: 800px;
+  max-width: 80%;
+  max-height: 90vh;
+  background: #fff;
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow: 0 20px 48px rgba(53, 121, 157, 0.18);
+  display: flex;
+  flex-direction: column;
+  border: 1px solid #bdd4e0;
+}
+
+.ap-modalHead {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  padding: 14px;
+  border-bottom: 1px solid #e6eef3;
+  flex-shrink: 0;
+  background: #f7fafc;
+}
+
+.ap-modalTitle {
+  margin: 0;
+  font-size: 17px;
+  font-weight: 900;
+  color: #35799d;
+  font-family: "Roboto", sans-serif;
+}
+
+/* ---------- Form ---------- */
+.ap-form {
+  padding: 16px;
+  overflow-y: auto;
+  flex: 1 1 auto;
+  min-height: 0;
+  font-family: "Roboto", sans-serif;
+}
+
+.ap-form::-webkit-scrollbar,
+.ap-storageBody::-webkit-scrollbar {
+  width: 8px;
+}
+
+.ap-form::-webkit-scrollbar-thumb,
+.ap-storageBody::-webkit-scrollbar-thumb {
+  background: rgba(79, 151, 187, 0.28);
+  border-radius: 999px;
+}
+
+.ap-formActions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  padding: 14px 16px 16px;
+  border-top: 1px solid #e6eef3;
+  background: #fff;
+  position: sticky;
+  bottom: 0;
+  z-index: 2;
+}
+
+/* inline input + button */
+.ap-inlineRow {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 10px;
+  align-items: center;
+}
+
+.ap-inlineRow .ap-input {
+  min-width: 0;
+  width: 100%;
+}
+
+/* chips */
+.ap-chipWrap {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 10px;
+}
+
+.ap-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 7px 10px;
+  border-radius: 10px;
+  background: rgba(79, 151, 187, 0.08);
+  border: 1px solid rgba(79, 151, 187, 0.18);
+  color: #35799d;
+  font-weight: 700;
+  font-size: 12px;
+  font-family: "Roboto", sans-serif;
+}
+
+.ap-chipX {
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  color: inherit;
+  font-weight: 700;
+  padding: 0;
+  line-height: 1;
+}
+
+.ap-check {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  font-family: "Roboto", sans-serif;
+  color: #244656;
+}
+
+.ap-labelChecks {
+  display: flex;
+  gap: 14px 18px;
+  flex-wrap: wrap;
+  align-items: center;
+  min-height: 42px;
+  padding-top: 6px;
+}
+
+/* textarea */
+.ap-textarea {
+  width: 100%;
+  border-radius: 12px;
+  border: 1px solid #bdd4e0;
+  padding: 10px 12px;
+  outline: none;
+  font-size: 13px;
+  resize: vertical;
+  font-family: "Roboto", sans-serif;
+  color: #244656;
+  transition: all 0.2s ease;
+  min-height: 120px;
+  box-sizing: border-box;
+}
+
+.ap-textarea:focus {
+  border-color: #4f97bb;
+  box-shadow: 0 0 0 0.2rem rgba(79, 151, 187, 0.14);
+}
+
+/* ---------- Upload / image section ---------- */
+.ap-uploadPanel {
+  background: #f7fafc;
+  border: 1px solid #d7e5ec;
+  border-radius: 16px;
+  padding: 14px;
+  min-height: 100%;
+}
+
+.ap-uploadRow {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.ap-file {
+  flex: 1;
+  min-width: 260px;
+  border: 1px dashed #bdd4e0;
+  border-radius: 12px;
+  padding: 10px 12px;
+  background: #fff;
+  font-family: "Roboto", sans-serif;
+  box-sizing: border-box;
+}
+
+.ap-fileHint {
+  margin-top: 10px;
+  font-size: 12px;
+  color: #6f8898;
+  background: #edf5f9;
+  border: 1px solid #d5e7f0;
+  border-radius: 10px;
+  padding: 8px 10px;
+}
+
+.ap-productBadges {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+  margin-top: 6px;
+}
+
+.ap-galleryPreview {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+  gap: 14px;
+  margin-top: 14px;
+}
+
+.ap-galleryItem {
+  position: relative;
+  min-height: 170px;
+  border: 1px solid #d7e5ec;
+  border-radius: 14px;
+  overflow: hidden;
+  background: #fff;
+  box-shadow: 0 6px 16px rgba(79, 151, 187, 0.08);
+}
+
+.ap-galleryItem img {
+  width: 100%;
+  height: 120px;
+  object-fit: cover;
+  display: block;
+}
+
+.ap-galleryActions {
+  padding: 10px;
+  display: flex;
+  justify-content: center;
+}
+
+.ap-galleryPrimaryBtn {
+  width: 100%;
+  min-height: 36px;
+  border: 1px solid #bdd4e0;
+  background: #eef6fa;
+  color: #35799d;
+  border-radius: 10px;
+  font-family: "Roboto", sans-serif;
+  font-size: 12px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.18s ease;
+}
+
+.ap-galleryPrimaryBtn:hover {
+  background: #dcecf4;
+  border-color: #4f97bb;
+  color: #244656;
+}
+
+.ap-galleryPrimaryBtn.is-primary {
+  background: #4f97bb;
+  border-color: #4f97bb;
+  color: #ffffff;
+}
+
+.ap-galleryRemove {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  border: none;
+  background: rgba(36, 70, 86, 0.78);
+  color: #fff;
+  cursor: pointer;
+  font-size: 13px;
+  line-height: 26px;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.ap-galleryRemove:hover {
+  background: rgba(36, 70, 86, 0.95);
+}
+
+/* ---------- Storage modal ---------- */
+.ap-storageModal {
+  width: 960px;
+  max-width: 96vw;
+  height: 92vh;
+  max-height: 92vh;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.ap-storageModal .ap-modalHead {
+  flex: 0 0 auto;
+}
+
+.ap-storageBody {
+  flex: 1 1 auto;
+  min-height: 0;
+  padding: 14px;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+.ap-storageFooter {
+  flex: 0 0 auto;
+  padding: 12px 14px 14px;
+  display: flex;
+  gap: 8px;
+  justify-content: flex-end;
+  border-top: 1px solid #e6eef3;
+  background: #fff;
+}
+
+.ap-storageGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: 14px;
+  align-items: start;
+}
+
+.ap-storageItem {
+  border: 1px solid #d7e5ec;
+  border-radius: 14px;
+  overflow: hidden;
+  position: relative;
+  background: #ffffff;
+  box-shadow: 0 4px 14px rgba(79, 151, 187, 0.06);
+  transition: all 0.18s ease;
+}
+
+.ap-storageItem:hover {
+  transform: translateY(-2px);
+  border-color: #8ebbd0;
+  box-shadow: 0 10px 22px rgba(79, 151, 187, 0.14);
+}
+
+.ap-storageItem.is-selected {
+  border: 2px solid #35799d;
+  box-shadow: 0 0 0 4px rgba(53, 121, 157, 0.14);
+}
+
+.ap-storageImage {
+  width: 100%;
+  height: 118px;
+  object-fit: cover;
+  display: block;
+  background: #f3f3f3;
+}
+
+.ap-storageName {
+  padding: 10px;
+  font-size: 12px;
+  line-height: 1.45;
+  color: #244656;
+  word-break: break-word;
+  min-height: 56px;
+  background: #fbfdfe;
+}
+
+.ap-storagePickBtn {
+  position: absolute;
+  right: 8px;
+  top: 8px;
+  width: 30px;
+  min-width: 30px;
+  height: 30px;
+  padding: 0;
+  border: none;
+  border-radius: 8px;
+  background: #ffffff;
+  color: #35799d;
+  font-weight: 800;
+  font-size: 16px;
+  line-height: 1;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(36, 70, 86, 0.12);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.ap-storagePickBtn:hover {
+  background: #eaf4f9;
+  color: #244656;
+  transform: scale(1.04);
+}
+
+.ap-storageItem.is-selected .ap-storagePickBtn {
+  background: #35799d;
+  color: #ffffff;
+  box-shadow: 0 6px 14px rgba(53, 121, 157, 0.22);
+}
+
+/* ---------- Responsive: tablet ---------- */
+@media (max-width: 1024px) {
+  .ap-modal {
+    width: 92%;
+    max-width: 92%;
+  }
+
+  .ap-toolbar {
+    grid-template-columns: 1fr;
+  }
+
+  .ap-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+/* ---------- Responsive: small tablet ---------- */
+@media (max-width: 820px) {
+  .ap-head {
+    gap: 12px;
+  }
+
+  .ap-field {
+    min-width: 100%;
+  }
+
+  .ap-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .ap-fieldHalf,
+  .ap-fieldFull {
+    grid-column: 1 / -1;
+  }
+
+  .ap-inlineRow {
+    grid-template-columns: 1fr;
+  }
+
+  .ap-table {
+    min-width: 720px;
+  }
+
+  .ap-modal {
+    width: 100%;
+    max-width: 100%;
+    max-height: 94vh;
+    border-radius: 14px;
+  }
+
+  .ap-uploadRow {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .ap-file {
+    min-width: 100%;
+  }
+
+  .ap-btnStorage {
+    width: 100%;
+  }
+
+  .ap-galleryPreview {
+    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+  }
+
+  .ap-storageGrid {
+    grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
+  }
+
+  .ap-pagination {
+    flex-wrap: wrap;
+  }
+}
+
+/* ---------- Responsive: mobile ---------- */
+@media (max-width: 576px) {
+  .ap-page {
+    font-size: 14px;
+  }
+
+  .ap-title {
+    font-size: 20px;
+  }
+
+  .ap-subtitle {
+    font-size: 12px;
+  }
+
+  .ap-toolbar,
+  .ap-form,
+  .ap-modalHead,
+  .ap-formActions {
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+
+  .ap-toolbar {
+    padding-top: 14px;
+    padding-bottom: 14px;
+    gap: 12px;
+  }
+
+  .ap-btn {
+    min-height: 40px;
+    padding: 0 12px;
+    font-size: 12px;
+  }
+
+  .ap-input,
+  .ap-textarea {
+    font-size: 13px;
+  }
+
+  .ap-storageGrid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 10px;
+  }
+
+  .ap-galleryPreview {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 10px;
+  }
+
+  .ap-storageName {
+    font-size: 11px;
+    min-height: 48px;
+  }
+
+  .ap-pagination {
+    justify-content: center;
+  }
+
+  .ap-labelChecks {
+    gap: 10px 14px;
+  }
+}

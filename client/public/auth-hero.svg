@@ -1,0 +1,44 @@
+<svg width="1200" height="1600" viewBox="0 0 1200 1600" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1200" y2="1600" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#FFE6F4"/>
+      <stop offset="1" stop-color="#FFC4E4"/>
+    </linearGradient>
+    <linearGradient id="shape1" x1="250" y1="350" x2="1050" y2="1300" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#FF68B2"/>
+      <stop offset="1" stop-color="#B31264"/>
+    </linearGradient>
+    <linearGradient id="shape2" x1="0" y1="900" x2="780" y2="1300" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#FFFFFF" stop-opacity="0.65"/>
+      <stop offset="1" stop-color="#FFFFFF" stop-opacity="0.15"/>
+    </linearGradient>
+    <filter id="blurA" x="-120" y="-120" width="1480" height="1840" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+      <feGaussianBlur stdDeviation="60"/>
+    </filter>
+  </defs>
+
+  <rect width="1200" height="1600" fill="url(#bg)"/>
+
+  <g filter="url(#blurA)" opacity="0.45">
+    <ellipse cx="1030" cy="180" rx="270" ry="200" fill="#FF8AC6"/>
+    <ellipse cx="180" cy="1340" rx="320" ry="220" fill="#FF9CD0"/>
+  </g>
+
+  <path d="M260 1260C160 1090 130 900 180 740C230 580 360 450 540 410C715 372 905 426 1015 560C1115 680 1140 860 1085 1018C1030 1176 900 1290 740 1330C548 1378 356 1424 260 1260Z" fill="url(#shape1)" opacity="0.88"/>
+
+  <path d="M120 970C215 850 365 790 510 840C630 880 735 980 860 1010C962 1035 1052 997 1150 950V1600H0V1260C35 1170 70 1033 120 970Z" fill="url(#shape2)"/>
+
+  <rect x="122" y="108" width="420" height="72" rx="36" fill="#FFFFFF" fill-opacity="0.55"/>
+  <rect x="122" y="210" width="290" height="24" rx="12" fill="#FFFFFF" fill-opacity="0.42"/>
+
+  <circle cx="946" cy="338" r="16" fill="#FFFFFF" fill-opacity="0.85"/>
+  <circle cx="1000" cy="386" r="10" fill="#FFFFFF" fill-opacity="0.7"/>
+  <circle cx="910" cy="402" r="8" fill="#FFFFFF" fill-opacity="0.6"/>
+
+  <g opacity="0.95">
+    <path d="M680 520C620 610 590 690 585 765C580 837 603 905 650 950C697 995 763 1015 835 1005C907 995 975 956 1020 892C1065 827 1085 744 1072 660C1059 576 1013 495 947 441C881 386 797 360 724 372C772 400 765 467 680 520Z" fill="#FFD4EA" fill-opacity="0.88"/>
+    <path d="M690 542C738 512 749 468 719 421C759 416 804 430 840 458C888 495 916 551 921 614C926 678 907 744 869 794C832 844 781 874 725 878C670 883 620 862 585 824C551 786 534 733 538 677C542 621 564 563 603 509C618 546 649 572 690 542Z" fill="#FFF3FA" fill-opacity="0.9"/>
+  </g>
+
+  <text x="126" y="1535" fill="#7A1F54" font-family="Segoe UI, Arial, sans-serif" font-size="58" font-weight="700" letter-spacing="2">LOCALBRAND</text>
+</svg>

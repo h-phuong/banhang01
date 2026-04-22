@@ -1,0 +1,70 @@
+.verify-wrapper {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background-color: #f5f5f5;
+  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+}
+
+.verify-card {
+  width: 400px;
+  padding: 35px;
+  background: #fff;
+  border-radius: 20px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+  align-items: center;
+}
+
+.verify-card h2 {
+  font-size: 22px;
+  font-weight: 800;
+  margin-bottom: 10px;
+}
+
+.verify-card p {
+  font-size: 13px;
+  color: #666;
+  margin-bottom: 20px;
+}
+
+.otp-inputs {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.otp-box {
+  width: 45px;
+  height: 50px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  text-align: center;
+  font-size: 20px;
+  font-weight: 600;
+  outline: none;
+  transition: 0.2s ease;
+}
+
+.otp-box:focus {
+  border-color: #000;
+  background: #fafafa;
+}
+
+.verify-card input:focus {
+  border-color: #000;
+  background-color: #fafafa;
+  outline: none;
+}
+
+.verify-card button {
+  padding: 12px;
+  background: #000;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+}
